@@ -8,18 +8,26 @@ public abstract class Animal {
     protected int distanceSwimMax;
     protected int distanceRunMax;
 
+    private static int count = 0;
+
     public Animal() {
     }
 
     public Animal(String name, String color, int age, int distanceRunMax, int distanceSwimMax) {
-        this.name=name;
-        this.color=color;
-        this.age=age;
-        this.distanceRunMax=distanceRunMax;
-        this.distanceSwimMax=distanceSwimMax;
+        this.name = name;
+        this.color = color;
+        this.age = age;
+        this.distanceRunMax = distanceRunMax;
+        this.distanceSwimMax = distanceSwimMax;
+        count++;
     }
+
 
     public abstract void run(int distance);
 
     public abstract void swim(int distance);
+
+    public static int getCount() {
+        return count;
+    }
 }
